@@ -204,6 +204,11 @@ module.exports = React.createClass({
 
         this.scrollTop = scrollTop
 
+        if (this.props.onScroll) {
+          var endIndex = this.getRenderEndIndex(props, state)
+          this.props.onScroll({ scrollTop, endIndex })
+        }
+
         if (props.virtualRendering){
 
             var prevIndex        = this.state.startIndex || 0

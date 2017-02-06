@@ -589,7 +589,6 @@ th {
   box-pack: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
-              -ms-grid-row-align: center;
           align-items: center;
 }
 .u-inflexible,
@@ -939,7 +938,6 @@ html.u-app body * {
   box-orient: vertical;
   -webkit-box-align: stretch;
       -ms-flex-align: stretch;
-              -ms-grid-row-align: stretch;
           align-items: stretch;
 }
 .react-datagrid .z-row,
@@ -1058,7 +1056,6 @@ html.u-app body * {
   -ms-flex-pack: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
-              -ms-grid-row-align: center;
           align-items: center;
 }
 .react-datagrid.z-empty .z-empty-text {
@@ -1095,7 +1092,6 @@ html.u-app body * {
 .react-datagrid .z-header {
   -webkit-box-align: stretch /* for vertical aligning text in header */;
       -ms-flex-align: stretch /* for vertical aligning text in header */;
-              -ms-grid-row-align: stretch /* for vertical aligning text in header */;
           align-items: stretch /* for vertical aligning text in header */;
 }
 .react-datagrid.z-with-column-menu .z-column-header .z-show-filter,
@@ -1285,7 +1281,6 @@ html.u-app body * {
   border-top: 1px solid #a8a8a8;
   -webkit-box-align: stretch /* for vertical aligning text in header */;
       -ms-flex-align: stretch /* for vertical aligning text in header */;
-              -ms-grid-row-align: stretch /* for vertical aligning text in header */;
           align-items: stretch /* for vertical aligning text in header */;
 }
 .react-datagrid .z-summary .z-cell {
