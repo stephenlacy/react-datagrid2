@@ -1,15 +1,11 @@
-react-datagrid
-=================
+# react-datagrid
+### Fork for maintenance and development
 
-[![Join the chat at https://gitter.im/zippyui/react-datagrid](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/zippyui/react-datagrid?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-[![Build Status](https://circleci.com/gh/zippyui/react-datagrid.svg?style=shield)](https://circleci.com/gh/zippyui/react-datagrid)
+> A carefully crafted DataGrid for React.
 
-> A carefully crafted DataGrid for React
+See demo at [stevelacy.github.io/react-datagrid](http://stevelacy.github.io/react-datagrid)
 
-
-See demo at [zippyui.github.io/react-datagrid](http://zippyui.github.io/react-datagrid)
-
-<a href="http://zippyui.github.io/react-datagrid/#/examples/basic"><img src="./react-datagrid.png" height="400" width="739" /></a>
+<a href="http://stevelacy.github.io/react-datagrid/#/examples/basic"><img src="./react-datagrid.png" height="400" width="739" /></a>
 
 
 ## Supports both React 0.14 & 15
@@ -17,7 +13,7 @@ See demo at [zippyui.github.io/react-datagrid](http://zippyui.github.io/react-da
 ## Install
 
 ```sh
-$ npm install react-datagrid --save
+$ npm install @stevelacy/react-datagrid --save
 ```
 
 ## Changelog
@@ -40,7 +36,7 @@ See [changelog](./CHANGELOG.md)
 
 ## Usage
 
-Please include the stylesheet `index.css` in your project. If you are using `webpack` with `css-loader`, you can require it: `require('react-datagrid/index.css')`
+Please include the stylesheet `index.css` in your project. If you are using `webpack` with `css-loader`, you can require it: `require('@stevelacy/react-datagrid/index.css')`
 
 #### NOTE:
 For optimal performance, make sure you use `react-datagrid` with the **production version of React**, not the `dev` version. The `dev` version contains a lot of checks, which slow down grid scrolling/rendering quite a bit.
@@ -51,7 +47,7 @@ Of course for development, you can use React `dev` version, but this is just a w
 ```jsx
 
 var React = require('react')
-var DataGrid = require('react-datagrid')
+var DataGrid = require('@stevelacy/react-datagrid')
 
 var data = [
   { id: '1', firstName: 'John', lastName: 'Bobson'},
@@ -66,7 +62,7 @@ var columns = [
 
 ```
 
-For more examples, see [examples site](http://zippyui.github.io/react-datagrid/#/examples/basic)
+For more examples, see [examples site](http://stevelacy.github.io/react-datagrid/#/examples/basic)
 
 ## Props
 
@@ -223,8 +219,6 @@ If you want to enable column reordering, just specify the `onColumnOrderChange` 
 
  * dataSource: String/Function/Promise if you specify a url to load remote data from, by default, pagination props are appended to the url as query params (pageSize, skip).
 
-For an example, see [examples/restore-grid-state](http://zippyui.github.io/react-datagrid#/examples/restore-grid-state)
-
 #### Pagination
 
  When you have remote data, pagination is setup by default. If you want to disable pagination, specify the `pagination` prop with a `false` value.
@@ -239,14 +233,14 @@ For an example, see [examples/restore-grid-state](http://zippyui.github.io/react
 
 ## Contributing
 
-Use [Github issues](https://github.com/zippyui/react-datagrid/issues) for feature requests and bug reports.
+Use [Github issues](https://github.com/stevelacy/react-datagrid/issues) for feature requests and bug reports.
 
 We actively welcome pull requests.
 
 For setting up & starting the project locally, use:
 
 ```sh
-$ git clone https://github.com/zippyui/react-datagrid
+$ git clone https://github.com/stevelacy/react-datagrid
 $ cd react-datagrid
 $ npm install
 $ npm run dev # or npm run hot
