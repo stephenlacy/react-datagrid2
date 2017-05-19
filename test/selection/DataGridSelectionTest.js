@@ -1,8 +1,8 @@
 'use strict';
 
 var DataGrid  = require('../DataGrid')
-var React     = require('react/addons')
-var TestUtils = React.addons.TestUtils
+var React     = require('react')
+var TestUtils = require('react-dom/test-utils')
 
 var testUtils = require('../utils')
 

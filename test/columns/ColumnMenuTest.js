@@ -5,8 +5,8 @@ require('../testdom')()
 
 var should = require('should')
 
-var React     = require('react/addons')
-var TestUtils = React.addons.TestUtils
+var React     = require('react')
+var TestUtils = require('react-dom/test-utils')
 var DataGrid  = require('../DataGrid')
 
 var TABLE_CLASS         = 'z-table'

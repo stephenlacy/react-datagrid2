@@ -1,8 +1,8 @@
 'use strict';
 
 var DataGrid  = require('../DataGrid')
-var React     = require('react/addons')
-var TestUtils = React.addons.TestUtils
+var React     = require('react')
+var TestUtils = require('react-dom/test-utils')
 
 var TABLE_CLASS         = 'z-table'
 var ROW_CLASS           = 'z-row'
@@ -75,7 +75,7 @@ describe('DataGrid Test Suite - Rendering', function(){
 		var emptyText = findWithClass(table,EMPTY_TEXT_CLASS);
 		emptyText.should.not.be.empty;
 		// check no record text equals with specified text
-		emptyText.getDOMNode().textContent.should.equal(EMPTY_TEXT);	
+		emptyText.getDOMNode().textContent.should.equal(EMPTY_TEXT);
 
 		done()
 	})

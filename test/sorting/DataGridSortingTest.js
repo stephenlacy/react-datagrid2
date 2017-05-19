@@ -1,8 +1,8 @@
 'use strict';
 
 var DataGrid  = require('../DataGrid')
-var React     = require('react/addons')
-var TestUtils = React.addons.TestUtils
+var React     = require('react')
+var TestUtils = require('react-dom/test-utils')
 
 var TABLE_CLASS         = 'z-table'
 var ROW_CLASS           = 'z-row'
@@ -31,7 +31,7 @@ var columns = [
 describe('DataGrid Test Suite -  Sorting',function() {
 
     it('Check presence of sort indicator (single sorting), given the sort info object',function() {
-        
+
         var data = generateMockData({type : 'local',len : 1})
         var SORT_INFO = [ { name: 'firstName', dir: 'asc'}]
 
@@ -52,7 +52,7 @@ describe('DataGrid Test Suite -  Sorting',function() {
     })
 
     it('Check presence of sort indicator (multiple sorting), given the sort info object',function() {
-        
+
         var data = generateMockData({type : 'local',len : 1})
         var SORT_INFO = [ { name: 'firstName', dir: 'asc'} , { name : 'lastName', dir : 'asc'}]
 
@@ -83,7 +83,7 @@ describe('DataGrid Test Suite -  Sorting',function() {
         var onSortChangeHandler = function(sortInfo) {
             sortInfo.length.should.equal(1)
             sortInfo[0].name.should.equal('firstName')
-            sortInfo[0].dir.should.equal(checkDir)    
+            sortInfo[0].dir.should.equal(checkDir)
         }
 
         // table with column menu
@@ -118,7 +118,7 @@ describe('DataGrid Test Suite -  Sorting',function() {
             sortInfo[0].name.should.equal('firstName')
             sortInfo[0].dir.should.equal(checkDir)
             sortInfo[1].name.should.equal('lastName')
-            sortInfo[1].dir.should.equal(originalDir)    
+            sortInfo[1].dir.should.equal(originalDir)
         }
 
         // table with column menu
@@ -141,6 +141,6 @@ describe('DataGrid Test Suite -  Sorting',function() {
 
     })
 
-    
+
 
 })
