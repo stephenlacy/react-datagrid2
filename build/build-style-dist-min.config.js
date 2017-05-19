@@ -14,8 +14,11 @@ module.exports = {
   module: {
     loaders: [
       {
-          test: /\.styl$/,
-          loader: ExtractTextPlugin.extract('style-loader', 'css-loader!autoprefixer!stylus-loader')
+        test: /\.styl$/,
+        loader: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: 'css-loader!autoprefixer-loader!stylus-loader'
+        })
       }
     ]
   },

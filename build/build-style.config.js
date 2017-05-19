@@ -8,14 +8,17 @@ module.exports = {
     'index-no-normalize': './style/index.styl'
   },
   output: {
-    filename: 'index.css'
+    filename: '[name].css'
   },
   module: {
     loaders: [
-        {
-          test: /\.styl$/,
-          loader: ExtractTextPlugin.extract('style-loader', 'css-loader!autoprefixer!stylus-loader')
-        }
+      {
+        test: /\.styl$/,
+        loader: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: 'css-loader!autoprefixer-loader!stylus-loader'
+        })
+      }
     ]
   },
   plugins: [
