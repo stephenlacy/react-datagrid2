@@ -1,2 +1,5 @@
 yarn.lock
 node_modules
+*.log
+.history
+
