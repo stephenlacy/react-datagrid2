@@ -1,6 +1,6 @@
 {
-  "name": "react-datagrid",
-  "version": "2.1.2",
+  "name": "@stevelacy/react-datagrid",
+  "version": "2.2.0",
   "description": "React DataGrid",
   "main": "lib/index.js",
   "scripts": {
@@ -20,7 +20,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/zippyui/react-datagrid.git"
+    "url": "https://github.com/stevelacy/react-datagrid.git"
   },
   "keywords": [
     "grid",
@@ -90,11 +90,11 @@
     "react": ">=0.14.0 || >=15.0.0",
     "react-dom": ">=0.14.0 || >=15.0.0"
   },
-  "author": "ZippyUI <contact@zippyui.com>",
+  "author": "ZippyUI ~2016 | Steve Lacy ~2017",
   "contributors": [],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/zippyui/react-datagrid/issues"
+    "url": "https://github.com/stevelacy/react-datagrid/issues"
   },
-  "homepage": "https://github.com/zippyui/react-datagrid"
+  "homepage": "https://github.com/stevelacy/react-datagrid"
 }
