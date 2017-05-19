@@ -3,7 +3,7 @@
 var React = require('react')
 var PropTypes = require('prop-types')
 var assign = require('object-assign')
-var Scroller = require('react-virtual-scroller')
+var Scroller = require('react-virtual-scroller2')
 
 function emptyFn(){}
 

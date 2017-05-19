@@ -1,11 +1,11 @@
-# react-datagrid
+# react-datagrid2
 ### Fork for maintenance and development
 
 > A carefully crafted DataGrid for React.
 
-See demo at [stevelacy.github.io/react-datagrid](http://stevelacy.github.io/react-datagrid)
+See demo at [stevelacy.github.io/react-datagrid2](http://stevelacy.github.io/react-datagrid2)
 
-<a href="http://stevelacy.github.io/react-datagrid/#/examples/basic"><img src="./react-datagrid.png" height="400" width="739" /></a>
+<a href="http://stevelacy.github.io/react-datagrid2/#/examples/basic"><img src="./react-datagrid.png" height="400" width="739" /></a>
 
 
 ## Supports both React 0.14 & 15
@@ -13,7 +13,7 @@ See demo at [stevelacy.github.io/react-datagrid](http://stevelacy.github.io/reac
 ## Install
 
 ```sh
-$ npm install @stevelacy/react-datagrid --save
+$ npm install react-datagrid2 --save
 ```
 
 ## Changelog
@@ -36,10 +36,10 @@ See [changelog](./CHANGELOG.md)
 
 ## Usage
 
-Please include the stylesheet `index.css` in your project. If you are using `webpack` with `css-loader`, you can require it: `require('@stevelacy/react-datagrid/index.css')`
+Please include the stylesheet `index.css` in your project. If you are using `webpack` with `css-loader`, you can require it: `require('react-datagrid2/index.css')`
 
 #### NOTE:
-For optimal performance, make sure you use `react-datagrid` with the **production version of React**, not the `dev` version. The `dev` version contains a lot of checks, which slow down grid scrolling/rendering quite a bit.
+For optimal performance, make sure you use `react-datagrid2` with the **production version of React**, not the `dev` version. The `dev` version contains a lot of checks, which slow down grid scrolling/rendering quite a bit.
 
 Of course for development, you can use React `dev` version, but this is just a warning so you won't be put off if you see some jank in `dev` mode. It will dissapear when you switch to `production` (minified) version. We are working on this, to make the datagrid usage experience as optimal as possible even in development.
 
@@ -47,7 +47,7 @@ Of course for development, you can use React `dev` version, but this is just a w
 ```jsx
 
 var React = require('react')
-var DataGrid = require('@stevelacy/react-datagrid')
+var DataGrid = require('react-datagrid2')
 
 var data = [
   { id: '1', firstName: 'John', lastName: 'Bobson'},
@@ -62,7 +62,7 @@ var columns = [
 
 ```
 
-For more examples, see [examples site](http://stevelacy.github.io/react-datagrid/#/examples/basic)
+For more examples, see [examples site](http://stevelacy.github.io/react-datagrid2/#/examples/basic)
 
 ## Props
 
@@ -233,15 +233,15 @@ If you want to enable column reordering, just specify the `onColumnOrderChange` 
 
 ## Contributing
 
-Use [Github issues](https://github.com/stevelacy/react-datagrid/issues) for feature requests and bug reports.
+Use [Github issues](https://github.com/stevelacy/react-datagrid2/issues) for feature requests and bug reports.
 
 We actively welcome pull requests.
 
 For setting up & starting the project locally, use:
 
 ```sh
-$ git clone https://github.com/stevelacy/react-datagrid
-$ cd react-datagrid
+$ git clone https://github.com/stevelacy/react-datagrid2
+$ cd react-datagrid2
 $ npm install
 $ npm run dev # or npm run hot
 ```
