@@ -804,7 +804,7 @@ module.exports = ExecutionEnvironment;
 
 
 
-var _prodInvariant = __webpack_require__(21);
+var _prodInvariant = __webpack_require__(22);
 
 var ReactCurrentOwner = __webpack_require__(15);
 
@@ -1237,7 +1237,7 @@ var _prodInvariant = __webpack_require__(5),
     _assign = __webpack_require__(1);
 
 var CallbackQueue = __webpack_require__(89);
-var PooledClass = __webpack_require__(19);
+var PooledClass = __webpack_require__(20);
 var ReactFeatureFlags = __webpack_require__(94);
 var ReactReconciler = __webpack_require__(25);
 var Transaction = __webpack_require__(38);
@@ -1626,7 +1626,7 @@ module.exports = g;
 
 var _assign = __webpack_require__(1);
 
-var PooledClass = __webpack_require__(19);
+var PooledClass = __webpack_require__(20);
 
 var emptyFunction = __webpack_require__(10);
 var warning = __webpack_require__(3);
@@ -2101,6 +2101,43 @@ module.exports = DOMProperty;
 /* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
+/* WEBPACK VAR INJECTION */(function(process) {/**
+ * Copyright 2013-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ */
+
+if (process.env.NODE_ENV !== 'production') {
+  var REACT_ELEMENT_TYPE = (typeof Symbol === 'function' &&
+    Symbol.for &&
+    Symbol.for('react.element')) ||
+    0xeac7;
+
+  var isValidElement = function(object) {
+    return typeof object === 'object' &&
+      object !== null &&
+      object.$$typeof === REACT_ELEMENT_TYPE;
+  };
+
+  // By explicitly using `prop-types` you are opting into new development behavior.
+  // http://fb.me/prop-types-in-prod
+  var throwOnDirectAccess = true;
+  module.exports = __webpack_require__(86)(isValidElement, throwOnDirectAccess);
+} else {
+  // By explicitly using `prop-types` you are opting into new production behavior.
+  // http://fb.me/prop-types-in-prod
+  module.exports = __webpack_require__(194)();
+}
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+
+/***/ }),
+/* 20 */
+/***/ (function(module, exports, __webpack_require__) {
+
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {/**
  * Copyright 2013-present, Facebook, Inc.
@@ -2216,7 +2253,7 @@ module.exports = PooledClass;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 20 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2563,7 +2600,7 @@ module.exports = ReactElement;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 21 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2607,7 +2644,7 @@ function reactProdInvariant(code) {
 module.exports = reactProdInvariant;
 
 /***/ }),
-/* 22 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2792,43 +2829,6 @@ Region.prototype.alignTo = function(target, positions, config){
 }
 
 module.exports = Region
-
-/***/ }),
-/* 23 */
-/***/ (function(module, exports, __webpack_require__) {
-
-/* WEBPACK VAR INJECTION */(function(process) {/**
- * Copyright 2013-present, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- */
-
-if (process.env.NODE_ENV !== 'production') {
-  var REACT_ELEMENT_TYPE = (typeof Symbol === 'function' &&
-    Symbol.for &&
-    Symbol.for('react.element')) ||
-    0xeac7;
-
-  var isValidElement = function(object) {
-    return typeof object === 'object' &&
-      object !== null &&
-      object.$$typeof === REACT_ELEMENT_TYPE;
-  };
-
-  // By explicitly using `prop-types` you are opting into new development behavior.
-  // http://fb.me/prop-types-in-prod
-  var throwOnDirectAccess = true;
-  module.exports = __webpack_require__(86)(isValidElement, throwOnDirectAccess);
-} else {
-  // By explicitly using `prop-types` you are opting into new production behavior.
-  // http://fb.me/prop-types-in-prod
-  module.exports = __webpack_require__(194)();
-}
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
 /* 24 */
@@ -3767,7 +3767,7 @@ var ReactComponent = __webpack_require__(70);
 var ReactPureComponent = __webpack_require__(300);
 var ReactClass = __webpack_require__(296);
 var ReactDOMFactories = __webpack_require__(297);
-var ReactElement = __webpack_require__(20);
+var ReactElement = __webpack_require__(21);
 var ReactPropTypes = __webpack_require__(298);
 var ReactVersion = __webpack_require__(301);
 
@@ -4998,7 +4998,7 @@ module.exports = setInnerHTML;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-var _reactDom=__webpack_require__(9);function emptyFn(){}var React=__webpack_require__(4),assign=__webpack_require__(1),Region=__webpack_require__(22),inTriangle=__webpack_require__(192),hasTouch=__webpack_require__(34),normalize=__webpack_require__(14),getMenuOffset=__webpack_require__(112),getConstrainRegion=__webpack_require__(111),getItemStyleProps=__webpack_require__(274),renderSubMenu=__webpack_require__(279),renderChildren=__webpack_require__(278),prepareItem=__webpack_require__(276),propTypes=__webpack_require__(277),ScrollContainer=__webpack_require__(271);var MenuItem=__webpack_require__(65),MenuClass=React.createClass({displayName:'Menu',propTypes:propTypes,getDefaultProps:function getDefaultProps(){return{isMenu:!0,constrainTo:!0,enableScroll:!0,interactionStyles:!0,applyDefaultTheme:!0,defaultStyle:{display:'inline-block',boxSizing:'border-box',position:'relative',background:'white',//theme props
+var _reactDom=__webpack_require__(9);function emptyFn(){}var React=__webpack_require__(4),assign=__webpack_require__(1),Region=__webpack_require__(23),inTriangle=__webpack_require__(192),hasTouch=__webpack_require__(34),normalize=__webpack_require__(14),getMenuOffset=__webpack_require__(112),getConstrainRegion=__webpack_require__(111),getItemStyleProps=__webpack_require__(274),renderSubMenu=__webpack_require__(279),renderChildren=__webpack_require__(278),prepareItem=__webpack_require__(276),propTypes=__webpack_require__(277),ScrollContainer=__webpack_require__(271);var MenuItem=__webpack_require__(65),MenuClass=React.createClass({displayName:'Menu',propTypes:propTypes,getDefaultProps:function getDefaultProps(){return{isMenu:!0,constrainTo:!0,enableScroll:!0,interactionStyles:!0,applyDefaultTheme:!0,defaultStyle:{display:'inline-block',boxSizing:'border-box',position:'relative',background:'white',//theme props
 border:'1px solid rgb(46, 153, 235)'},defaultSubMenuStyle:{position:'absolute'},subMenuStyle:null,scrollerProps:{},columns:['label'],items:null,visible:!0,defaultItemStyle:{},itemStyle:{},defaultItemOverStyle:{},itemOverStyle:{},defaultItemDisabledStyle:{},itemDisabledStyle:{},defaultItemExpandedStyle:{},itemExpandedStyle:{},defaultCellStyle:{},cellStyle:{},stopClickPropagation:!0}},getInitialState:function getInitialState(){return{mouseOver:!1}},componentWillUnmount:function componentWillUnmount(){this.didMount=!1},componentDidMount:function componentDidMount(){(this.props.onMount||emptyFn)(this),this.didMount=!0,(this.props.constrainTo||this.props.alignTo)&&!this.props.subMenu&&setTimeout(function(){if(this.isMounted()){var i,a=this.props,b=Region.from((0,_reactDom.findDOMNode)(this.refs.scrollContainer)),c=(0,_reactDom.findDOMNode)(this),d=Region.from(c),e=d.height,f=b.height+e,g=Region({left:d.left,right:d.right,top:d.top,bottom:d.top+f}),h=a.constrainTo?getConstrainRegion(a.constrainTo):null;//get clientHeight of this dom node, so as to account for padding
 //build the actual region of the menu
 if(a.alignTo){var j=Region.from(c.parentNode),k=Region.from(a.alignTo);g.alignTo(k,a.alignPositions,{offset:a.alignOffset,constrain:h});var l=g.top-j.top,m=g.left-j.left;i={style:{left:m,top:l}}}h&&(i=i||{},g.bottom>h.bottom&&(i.maxHeight=h.bottom-g.top-e)),i&&this.setState(i)}}.bind(this),0)},prepareProps:function prepareProps(a,b){var c={};return assign(c,this.props),c.style=this.prepareStyle(c,b),c.className=this.prepareClassName(c),c.itemStyleProps=getItemStyleProps(c,b),c.children=this.prepareChildren(c,b),c.scrollerProps=this.prepareScrollerProps(c),c},prepareScrollerProps:function prepareScrollerProps(a){return assign({},a.scrollerProps)},prepareChildren:function prepareChildren(a,b){var c=a.children;return a.items&&a.items.length&&(c=a.items.map(this.prepareItem.bind(this,a,b))),c},prepareItem:prepareItem,prepareClassName:function prepareClassName(a){var b=a.className||'';return b+=' z-menu',b},prepareStyle:function prepareStyle(a,b){var c=a.subMenu?a.defaultSubMenuStyle:null,d=assign({},a.defaultStyle,c,a.style,a.subMenuStyle);if(a.visible&&(!a.items||a.items.length)||(d.display='none'),a.absolute&&(d.position='absolute'),a.at){var e=Array.isArray(a.at),f={left:e?a.at[0]:void 0===a.at.left?a.at.x||a.at.pageX:a.at.left,top:e?a.at[1]:void 0===a.at.top?a.at.y||a.at.pageY:a.at.top};assign(d,f)}return b.style&&assign(d,b.style),!this.didMount&&(a.constrainTo||a.alignTo)&&!a.subMenu&&(d.visibility='hidden',d.maxHeight=0,d.overflow='hidden'),normalize(d)},/////////////// RENDERING LOGIC
@@ -5073,8 +5073,10 @@ module.exports = findIndexByName;
 "use strict";
 
 
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
 var React = __webpack_require__(4);
-var PropTypes = __webpack_require__(23);
+var PropTypes = __webpack_require__(19);
 var assign = __webpack_require__(1);
 var normalize = __webpack_require__(14);
 
@@ -5168,7 +5170,6 @@ var Cell = React.createClass({
     },
 
     prepareProps: function prepareProps(thisProps) {
-
         var props = assign({}, thisProps);
 
         if (!props.column && props.columns) {
@@ -5178,32 +5179,45 @@ var Cell = React.createClass({
         props.className = this.prepareClassName(props);
         props.style = this.prepareStyle(props);
 
+        // TODO: this is dumb... should be { ...rest }
+        delete props.columns;
+        delete props.index;
+        delete props.header;
+        delete props.firstClassName;
+        delete props.lastClassName;
+        delete props.defaultStyle;
+
         return props;
     },
 
     render: function render() {
         var props = this.p = this.prepareProps(this.props);
 
-        var column = props.column;
+        var column = props.column,
+            contentPadding = props.contentPadding,
+            renderText = props.renderText,
+            text = props.text,
+            rowIndex = props.rowIndex,
+            renderCell = props.renderCell,
+            rest = _objectWithoutProperties(props, ['column', 'contentPadding', 'renderText', 'text', 'rowIndex', 'renderCell']);
+
         var textAlign = column && column.textAlign;
-        var text = props.renderText ? props.renderText(props.text, column, props.rowIndex) : props.text;
+        var text = renderText ? renderText(text, column, rowIndex) : text;
 
         var contentProps = {
             className: 'z-content',
             style: {
-                padding: props.contentPadding
+                padding: contentPadding
             }
         };
 
-        var content = props.renderCell ? props.renderCell(contentProps, text, props) : React.DOM.div(contentProps, text);
+        var content = renderCell ? renderCell(contentProps, text, props) : React.DOM.div(contentProps, text);
 
-        var renderProps = assign({}, props);
-
-        delete renderProps.data;
+        delete rest.data;
 
         return React.createElement(
             'div',
-            renderProps,
+            rest,
             content,
             props.children
         );
@@ -5222,7 +5236,7 @@ module.exports = Cell;
 /* WEBPACK VAR INJECTION */(function(global) {
 
 var assign   = __webpack_require__(1)
-var Region   = __webpack_require__(22)
+var Region   = __webpack_require__(23)
 var hasTouch = __webpack_require__(34)
 var once     = __webpack_require__(150)
 
@@ -7450,7 +7464,7 @@ module.exports = function(str){
 
 
 
-var _prodInvariant = __webpack_require__(21);
+var _prodInvariant = __webpack_require__(22);
 
 var ReactNoopUpdateQueue = __webpack_require__(71);
 
@@ -7802,8 +7816,10 @@ LoadMask.propTypes = { visible: _react.PropTypes.bool, theme: _react.PropTypes.s
 "use strict";
 
 
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
 var React = __webpack_require__(4);
-var PropTypes = __webpack_require__(23);
+var PropTypes = __webpack_require__(19);
 var Region = __webpack_require__(12);
 var assign = __webpack_require__(1);
 var normalize = __webpack_require__(14);
@@ -7837,11 +7853,29 @@ module.exports = React.createClass({
 
   render: function render() {
     var props = this.prepareProps(this.props);
-    var cells = props.children || props.columns.map(this.renderCell.bind(this, this.props));
+
+    var columns = props.columns,
+        rest = _objectWithoutProperties(props, ['columns']);
+
+    // why did they do this....
+
+
+    delete rest.index;
+    delete rest.cellFactory;
+    delete rest.renderCell;
+    delete rest.renderText;
+    delete rest.rowHeight;
+    delete rest.minWidth;
+    delete rest.rowContextMenu;
+    delete rest.showMenu;
+    delete rest._onClick;
+    delete rest.defaultStyle;
+
+    var cells = props.children || columns.map(this.renderCell.bind(this, this.props));
 
     return React.createElement(
       'div',
-      props,
+      rest,
       cells
     );
   },
@@ -7951,7 +7985,6 @@ module.exports = React.createClass({
       columns: columns,
       index: index,
       rowIndex: props.index,
-      textPadding: props.cellPadding,
       renderCell: props.renderCell,
       renderText: props.renderText
     };
@@ -9170,7 +9203,7 @@ var _prodInvariant = __webpack_require__(5);
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var PooledClass = __webpack_require__(19);
+var PooledClass = __webpack_require__(20);
 
 var invariant = __webpack_require__(2);
 
@@ -11276,14 +11309,14 @@ var React=__webpack_require__(4),assign=__webpack_require__(1),emptyFn=function 
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-var _reactDom=__webpack_require__(9),Region=__webpack_require__(22),selectParent=__webpack_require__(120);module.exports=function(a){var b;if(!0===a&&(b=Region.getDocRegion()),!b&&'string'==typeof a){var c=selectParent(a,(0,_reactDom.findDOMNode)(this));b=Region.from(c)}return b||'function'!=typeof a||(b=Region.from(a())),b};
+var _reactDom=__webpack_require__(9),Region=__webpack_require__(23),selectParent=__webpack_require__(120);module.exports=function(a){var b;if(!0===a&&(b=Region.getDocRegion()),!b&&'string'==typeof a){var c=selectParent(a,(0,_reactDom.findDOMNode)(this));b=Region.from(c)}return b||'function'!=typeof a||(b=Region.from(a())),b};
 
 /***/ }),
 /* 112 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-var Region=__webpack_require__(22),selectParent=__webpack_require__(120);module.exports=function(a){var b=Region.from(selectParent('.z-menu',a)),c=Region.from(a);return{// pageX : thisRegion.left,
+var Region=__webpack_require__(23),selectParent=__webpack_require__(120);module.exports=function(a){var b=Region.from(selectParent('.z-menu',a)),c=Region.from(a);return{// pageX : thisRegion.left,
 // pageY : thisRegion.top,
 left:c.left-b.left,top:c.top-b.top,width:c.width,height:c.height}};
 
@@ -11420,7 +11453,7 @@ module.exports = REACT_ELEMENT_TYPE;
 
 var ReactCurrentOwner = __webpack_require__(15);
 var ReactComponentTreeHook = __webpack_require__(8);
-var ReactElement = __webpack_require__(20);
+var ReactElement = __webpack_require__(21);
 
 var checkReactTypeSpec = __webpack_require__(302);
 
@@ -12042,7 +12075,7 @@ module.exports = {
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var React = __webpack_require__(4);
-var PropTypes = __webpack_require__(23);
+var PropTypes = __webpack_require__(19);
 var Region = __webpack_require__(12);
 var ReactMenu = React.createFactory(__webpack_require__(66));
 var assign = __webpack_require__(1);
@@ -13123,7 +13156,7 @@ module.exports = {
 
 
 var React = __webpack_require__(4);
-var PropTypes = __webpack_require__(23);
+var PropTypes = __webpack_require__(19);
 var assign = __webpack_require__(1);
 
 module.exports = React.createClass({
@@ -13400,7 +13433,7 @@ module.exports = {
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var React = __webpack_require__(4);
-var PropTypes = __webpack_require__(23);
+var PropTypes = __webpack_require__(19);
 var assign = __webpack_require__(1);
 var Scroller = __webpack_require__(289);
 
@@ -15394,7 +15427,7 @@ var Region = __webpack_require__(12);
 var PaginationToolbar = _react2.default.createFactory(__webpack_require__(127));
 var Column = __webpack_require__(133);
 
-var PropTypes = __webpack_require__(23);
+var PropTypes = __webpack_require__(19);
 var RowPropTypes = __webpack_require__(128);
 var Wrapper = __webpack_require__(131);
 var Header = __webpack_require__(126);
@@ -22414,7 +22447,7 @@ module.exports = EnterLeaveEventPlugin;
 
 var _assign = __webpack_require__(1);
 
-var PooledClass = __webpack_require__(19);
+var PooledClass = __webpack_require__(20);
 
 var getTextContentAccessor = __webpack_require__(104);
 
@@ -27124,7 +27157,7 @@ var _assign = __webpack_require__(1);
 
 var EventListener = __webpack_require__(79);
 var ExecutionEnvironment = __webpack_require__(7);
-var PooledClass = __webpack_require__(19);
+var PooledClass = __webpack_require__(20);
 var ReactDOMComponentTree = __webpack_require__(6);
 var ReactUpdates = __webpack_require__(13);
 
@@ -28046,7 +28079,7 @@ module.exports = ReactPropTypeLocationNames;
 var _assign = __webpack_require__(1);
 
 var CallbackQueue = __webpack_require__(89);
-var PooledClass = __webpack_require__(19);
+var PooledClass = __webpack_require__(20);
 var ReactBrowserEventEmitter = __webpack_require__(36);
 var ReactInputSelection = __webpack_require__(96);
 var ReactInstrumentation = __webpack_require__(11);
@@ -28323,7 +28356,7 @@ module.exports = ReactRef;
 
 var _assign = __webpack_require__(1);
 
-var PooledClass = __webpack_require__(19);
+var PooledClass = __webpack_require__(20);
 var Transaction = __webpack_require__(38);
 var ReactInstrumentation = __webpack_require__(11);
 var ReactServerUpdateQueue = __webpack_require__(240);
@@ -30711,7 +30744,7 @@ var b=a.className||'';return b+=' z-menu-scroller '+a.side,a.active&&a.visible&&
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-var Region=__webpack_require__(22),getConstrainRegion=__webpack_require__(111);module.exports=function(a,b,c,d){var e=getConstrainRegion.call(this,d);if(e)if('function'==typeof a.alignSubMenu)a.alignSubMenu(b,c,e);else{var f=b.alignTo(c,['tl-tr','bl-br','tr-tl','br-bl'],{constrain:e});return'tl-tr'==f||'tr-tl'==f?//align downwards
+var Region=__webpack_require__(23),getConstrainRegion=__webpack_require__(111);module.exports=function(a,b,c,d){var e=getConstrainRegion.call(this,d);if(e)if('function'==typeof a.alignSubMenu)a.alignSubMenu(b,c,e);else{var f=b.alignTo(c,['tl-tr','bl-br','tr-tl','br-bl'],{constrain:e});return'tl-tr'==f||'tr-tl'==f?//align downwards
 1://align upwards
 -1}};
 
@@ -30727,7 +30760,7 @@ var assign=__webpack_require__(1);module.exports=function(a){var b=assign({},a.d
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-var _reactDom=__webpack_require__(9),Region=__webpack_require__(22),assign=__webpack_require__(1),align=__webpack_require__(273);module.exports=function(b,c){if(!c.menu||!this.didMount)return void(this.prevMenuIndex=-1);var d=c.menuOffset,e=d.left+d.width,f=d.top,g=c.itemProps.index,h=this.prevMenuIndex==g;this.aligning&&!h&&(this.aligning=!1),this.prevMenuIndex=g;var i={position:'absolute',visibility:'hidden',overflow:'hidden',pointerEvents:'none',left:e,top:f,zIndex:1};return this.aligning||h||setTimeout(function(){if(this.didMount){var j=Region.from((0,_reactDom.findDOMNode)(this)),k=Region.from({left:j.left,top:j.top+d.top,width:d.width,height:d.height}),l=this.refs.subMenu&&this.refs.subMenu.isMounted();if(l){var q,m=Region.from(this.refs.subMenu.refs.scrollContainer.getCurrentSizeDOM()),n=m.height,o=align(b,m,/* alignTo */k,b.constrainTo),p=m.height;p<n&&(q=p-b.subMenuConstrainMargin),q&&-1==o/* upwards*/&&(m.top=m.bottom-q);var r=m.left-j.left,s=m.top-j.top;5>Math.abs(r-e)&&(r=e),5>Math.abs(s-f)&&(s=f),this.subMenuPosition=0>r?'left':'right',this.alignOffset={left:r,top:s},this.aligning=!0,this.setState({subMenuMaxHeight:q})}}}.bind(this),0),(h||this.aligning&&this.alignOffset)&&(assign(i,this.alignOffset),i.visibility='visible',delete i.pointerEvents,delete i.overflow),this.aligning=!1,i};
+var _reactDom=__webpack_require__(9),Region=__webpack_require__(23),assign=__webpack_require__(1),align=__webpack_require__(273);module.exports=function(b,c){if(!c.menu||!this.didMount)return void(this.prevMenuIndex=-1);var d=c.menuOffset,e=d.left+d.width,f=d.top,g=c.itemProps.index,h=this.prevMenuIndex==g;this.aligning&&!h&&(this.aligning=!1),this.prevMenuIndex=g;var i={position:'absolute',visibility:'hidden',overflow:'hidden',pointerEvents:'none',left:e,top:f,zIndex:1};return this.aligning||h||setTimeout(function(){if(this.didMount){var j=Region.from((0,_reactDom.findDOMNode)(this)),k=Region.from({left:j.left,top:j.top+d.top,width:d.width,height:d.height}),l=this.refs.subMenu&&this.refs.subMenu.isMounted();if(l){var q,m=Region.from(this.refs.subMenu.refs.scrollContainer.getCurrentSizeDOM()),n=m.height,o=align(b,m,/* alignTo */k,b.constrainTo),p=m.height;p<n&&(q=p-b.subMenuConstrainMargin),q&&-1==o/* upwards*/&&(m.top=m.bottom-q);var r=m.left-j.left,s=m.top-j.top;5>Math.abs(r-e)&&(r=e),5>Math.abs(s-f)&&(s=f),this.subMenuPosition=0>r?'left':'right',this.alignOffset={left:r,top:s},this.aligning=!0,this.setState({subMenuMaxHeight:q})}}}.bind(this),0),(h||this.aligning&&this.alignOffset)&&(assign(i,this.alignOffset),i.visibility='visible',delete i.pointerEvents,delete i.overflow),this.aligning=!1,i};
 
 /***/ }),
 /* 276 */
@@ -30755,7 +30788,7 @@ var React=__webpack_require__(4),MenuItemCell=__webpack_require__(32),cloneEleme
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-var Region=__webpack_require__(22),assign=__webpack_require__(1),React=__webpack_require__(4),cloneElement=React.cloneElement,getPositionStyle=__webpack_require__(275);module.exports=function(a,b){var c=b.menu;if(c&&this.didMount){var d=getPositionStyle.call(this,a,b);return c=cloneElement(c,assign({ref:'subMenu',subMenu:!0,parentMenu:this,maxHeight:b.subMenuMaxHeight,onActivate:this.onSubMenuActivate,onInactivate:this.onSubMenuInactivate,scrollerProps:a.scrollerProps,constrainTo:a.constrainTo,expander:a.expander,theme:a.theme,themes:a.themes||this.constructor.themes},a.itemStyleProps)),React.createElement('div',{ref:'subMenuWrap',style:d,onMouseEnter:this.handleSubMenuMouseEnter,onMouseLeave:this.handleSubMenuMouseLeave},c)}};
+var Region=__webpack_require__(23),assign=__webpack_require__(1),React=__webpack_require__(4),cloneElement=React.cloneElement,getPositionStyle=__webpack_require__(275);module.exports=function(a,b){var c=b.menu;if(c&&this.didMount){var d=getPositionStyle.call(this,a,b);return c=cloneElement(c,assign({ref:'subMenu',subMenu:!0,parentMenu:this,maxHeight:b.subMenuMaxHeight,onActivate:this.onSubMenuActivate,onInactivate:this.onSubMenuInactivate,scrollerProps:a.scrollerProps,constrainTo:a.constrainTo,expander:a.expander,theme:a.theme,themes:a.themes||this.constructor.themes},a.itemStyleProps)),React.createElement('div',{ref:'subMenuWrap',style:d,onMouseEnter:this.handleSubMenuMouseEnter,onMouseLeave:this.handleSubMenuMouseLeave},c)}};
 
 /***/ }),
 /* 280 */
@@ -31375,7 +31408,7 @@ if (IS_MAC) {
   horizontalScrollbarStyle.height = 20;
 }
 
-var PT = _react2['default'].PropTypes;
+var PT = __webpack_require__(19);
 var DISPLAY_NAME = 'Scroller';
 
 var ON_OVERFLOW_NAMES = {
@@ -31533,8 +31566,25 @@ var Scroller = (function (_Component) {
     value: function prepareRenderProps(props) {
       var renderProps = assign({}, props);
 
+      // TODO: why did they do this... replace with { ...rest }
+
       delete renderProps.height;
       delete renderProps.width;
+      delete renderProps.onMount;
+      delete renderProps.preventDefaultHorizontal;
+      delete renderProps.loadMask;
+      delete renderProps.loading;
+      delete renderProps.scrollbarSize;
+      delete renderProps.minVerticalScrollStep;
+      delete renderProps.scrollTop;
+      delete renderProps.scrollLeft;
+      delete renderProps.scrollHeight;
+      delete renderProps.scrollWidth;
+      delete renderProps.onVerticalScroll;
+      delete renderProps.onHorizontalScroll;
+      delete renderProps.virtualRendering;
+      delete renderProps.minScrollStep;
+      delete renderProps.minHorizontalScrollStep;
 
       return renderProps;
     }
@@ -31712,7 +31762,7 @@ var Scroller = (function (_Component) {
       var style = horizontalScrollbarStyle;
       var minWidth = props.scrollWidth;
 
-      var scroller = _react2['default'].createElement('div', { xref: 'horizontalScroller', className: 'z-horizontal-scroller', style: { width: minWidth } });
+      var scroller = _react2['default'].createElement('div', { className: 'z-horizontal-scroller', style: { width: minWidth } });
 
       if (IS_MAC) {
         //needed for mac safari
@@ -32204,7 +32254,7 @@ module.exports = KeyEscapeUtils;
 
 
 
-var _prodInvariant = __webpack_require__(21);
+var _prodInvariant = __webpack_require__(22);
 
 var invariant = __webpack_require__(2);
 
@@ -32322,7 +32372,7 @@ module.exports = PooledClass;
 
 
 var PooledClass = __webpack_require__(294);
-var ReactElement = __webpack_require__(20);
+var ReactElement = __webpack_require__(21);
 
 var emptyFunction = __webpack_require__(10);
 var traverseAllChildren = __webpack_require__(305);
@@ -32517,11 +32567,11 @@ module.exports = ReactChildren;
 
 
 
-var _prodInvariant = __webpack_require__(21),
+var _prodInvariant = __webpack_require__(22),
     _assign = __webpack_require__(1);
 
 var ReactComponent = __webpack_require__(70);
-var ReactElement = __webpack_require__(20);
+var ReactElement = __webpack_require__(21);
 var ReactPropTypeLocationNames = __webpack_require__(117);
 var ReactNoopUpdateQueue = __webpack_require__(71);
 
@@ -33246,7 +33296,7 @@ module.exports = ReactClass;
 
 
 
-var ReactElement = __webpack_require__(20);
+var ReactElement = __webpack_require__(21);
 
 /**
  * Create a factory that creates HTML tag elements.
@@ -33422,7 +33472,7 @@ module.exports = ReactDOMFactories;
 
 
 
-var _require = __webpack_require__(20),
+var _require = __webpack_require__(21),
     isValidElement = _require.isValidElement;
 
 var factory = __webpack_require__(85);
@@ -33534,7 +33584,7 @@ module.exports = '15.5.4';
 
 
 
-var _prodInvariant = __webpack_require__(21);
+var _prodInvariant = __webpack_require__(22);
 
 var ReactPropTypeLocationNames = __webpack_require__(117);
 var ReactPropTypesSecret = __webpack_require__(299);
@@ -33652,9 +33702,9 @@ module.exports = getNextDebugID;
  */
 
 
-var _prodInvariant = __webpack_require__(21);
+var _prodInvariant = __webpack_require__(22);
 
-var ReactElement = __webpack_require__(20);
+var ReactElement = __webpack_require__(21);
 
 var invariant = __webpack_require__(2);
 
@@ -33697,7 +33747,7 @@ module.exports = onlyChild;
 
 
 
-var _prodInvariant = __webpack_require__(21);
+var _prodInvariant = __webpack_require__(22);
 
 var ReactCurrentOwner = __webpack_require__(15);
 var REACT_ELEMENT_TYPE = __webpack_require__(115);
