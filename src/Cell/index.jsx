@@ -99,45 +99,50 @@ var Cell = React.createClass({
     },
 
     prepareProps: function(thisProps){
+      var props = assign({}, thisProps)
 
-        var props = assign({}, thisProps)
+      if (!props.column && props.columns){
+        props.column  = props.columns[props.index]
+      }
 
-        if (!props.column && props.columns){
-            props.column  = props.columns[props.index]
-        }
+      props.className = this.prepareClassName(props)
+      props.style     = this.prepareStyle(props)
 
-        props.className = this.prepareClassName(props)
-        props.style     = this.prepareStyle(props)
+      // TODO: this is dumb... should be { ...rest }
+      delete props.columns
+      delete props.index
+      delete props.header
+      delete props.firstClassName
+      delete props.lastClassName
+      delete props.defaultStyle
 
-        return props
+      return props
     },
 
     render: function(){
-        var props = this.p = this.prepareProps(this.props)
+      var props = this.p = this.prepareProps(this.props)
 
-        var column    = props.column
-        var textAlign = column && column.textAlign
-        var text      = props.renderText?
-            props.renderText(props.text, column, props.rowIndex):
-            props.text
+      var {
+        column, contentPadding, renderText, text, rowIndex, renderCell, ...rest
+      } = props
 
-        var contentProps = {
-            className: 'z-content',
-            style    : {
-                padding: props.contentPadding
-            }
+      var textAlign = column && column.textAlign
+      var text = renderText ? renderText(text, column, rowIndex) : text
+
+      var contentProps = {
+        className: 'z-content',
+        style: {
+          padding: contentPadding
         }
+      }
 
-        var content = props.renderCell?
-                            props.renderCell(contentProps, text, props):
-                            React.DOM.div(contentProps, text)
+      var content = renderCell ? renderCell(contentProps, text, props) :
+        React.DOM.div(contentProps, text)
 
-        var renderProps = assign({}, props)
-
-        delete renderProps.data
+        delete rest.data
 
         return (
-            <div {...renderProps}>
+            <div {...rest}>
                 {content}
                 {props.children}
             </div>

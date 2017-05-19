@@ -35,10 +35,24 @@ module.exports = React.createClass({
 
   render: function() {
     var props = this.prepareProps(this.props)
-    var cells = props.children || props.columns
-            .map(this.renderCell.bind(this, this.props))
+    var { columns, ...rest } = props
 
-    return <div {...props}>{cells}</div>
+    // why did they do this....
+    delete rest.index
+    delete rest.cellFactory
+    delete rest.renderCell
+    delete rest.renderText
+    delete rest.rowHeight
+    delete rest.minWidth
+    delete rest.rowContextMenu
+    delete rest.showMenu
+    delete rest._onClick
+    delete rest.defaultStyle
+
+    var cells = props.children || columns
+      .map(this.renderCell.bind(this, this.props))
+
+    return <div {...rest}>{cells}</div>
   },
 
   prepareProps: function(thisProps){
@@ -153,7 +167,6 @@ module.exports = React.createClass({
       columns    : columns,
       index      : index,
       rowIndex   : props.index,
-      textPadding: props.cellPadding,
       renderCell : props.renderCell,
       renderText : props.renderText
     }

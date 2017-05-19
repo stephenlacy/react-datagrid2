@@ -23,16 +23,14 @@ module.exports = {
   plugins: plugins,
 
   devServer: {
-      publicPath: PUBLIC,
-      hot       : env.HOT,
-      port      : env.PORT,
-      historyApiFallback: true,
-      info: true,
-      quiet: false,
-
-      stats: {
-          colors: true,
-          progress: true
-      }
+    publicPath: PUBLIC,
+    hot       : env.HOT,
+    port      : env.PORT,
+    historyApiFallback: true,
+    quiet: false,
+    stats: {
+      colors: true,
+      progress: true
+    }
   }
 }

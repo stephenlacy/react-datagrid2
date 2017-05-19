@@ -3,7 +3,7 @@
 var env = require('./env');
 
 var jsLoaders = [
-    env.HOT? 'react-hot': '',
+    env.HOT? 'react-hot-loader': '',
     'babel-loader'
 ].filter(function(x){
     return !!x
@@ -18,16 +18,11 @@ module.exports = [
   {
     test: /\.styl$/,
     exclude: /node_modules/,
-    loader: 'style-loader!css-loader!autoprefixer!stylus-loader'
+    loader: 'style-loader!css-loader!autoprefixer-loader!stylus-loader'
   },
   {
     test: /\.css$/,
     exclude: /node_modules/,
-    loader: 'style-loader!css-loader!autoprefixer'
-  },
-  {
-    test: /\.json$/,
-    exclude: /node_modules/,
-    loader: 'json'
+    loader: 'style-loader!css-loader!autoprefixer-loader'
   }
 ]
