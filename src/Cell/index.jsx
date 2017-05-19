@@ -1,6 +1,7 @@
 'use strict';
 
 var React  = require('react')
+var PropTypes = require('prop-types')
 var assign = require('object-assign')
 var normalize = require('react-style-normalizer')
 
@@ -18,8 +19,6 @@ function copyProps(target, source, list){
     })
 
 }
-
-var PropTypes = React.PropTypes
 
 var Cell = React.createClass({
 

@@ -1,15 +1,16 @@
 'use strict';
 
-var React   = require('react')
-var Region  = require('region')
+var React = require('react')
+var PropTypes = require('prop-types')
+var Region = require('region')
 var ReactMenu = React.createFactory(require('react-menus'))
-var assign  = require('object-assign')
-var clone   = require('clone')
+var assign = require('object-assign')
+var clone = require('clone')
 var asArray = require('../utils/asArray')
 var findIndexBy = require('../utils/findIndexBy')
 var findIndexByName = require('../utils/findIndexByName')
-var Cell    = require('../Cell')
-var setupColumnDrag   = require('./setupColumnDrag')
+var Cell = require('../Cell')
+var setupColumnDrag = require('./setupColumnDrag')
 var setupColumnResize = require('./setupColumnResize')
 
 var normalize   = require('react-style-normalizer')
@@ -59,7 +60,7 @@ module.exports = React.createClass({
     displayName: 'ReactDataGrid.Header',
 
     propTypes: {
-        columns: React.PropTypes.array
+        columns: PropTypes.array
     },
 
     onDrop: function(event){

@@ -13,7 +13,8 @@ var Region   = require('region')
 var PaginationToolbar = React.createFactory(require('./PaginationToolbar'))
 var Column = require('./models/Column')
 
-var PropTypes      = require('./PropTypes')
+var PropTypes      = require('prop-types')
+var RowPropTypes      = require('./PropTypes')
 var Wrapper        = require('./Wrapper')
 var Header         = require('./Header')
 var WrapperFactory = React.createFactory(Wrapper)
@@ -89,34 +90,34 @@ module.exports = React.createClass({
     ],
 
     propTypes: {
-        loading          : React.PropTypes.bool,
-        virtualRendering : React.PropTypes.bool,
+        loading          : PropTypes.bool,
+        virtualRendering : PropTypes.bool,
 
         //specify false if you don't want any column to be resizable
-        resizableColumns : React.PropTypes.bool,
-        filterable: React.PropTypes.bool,
+        resizableColumns : PropTypes.bool,
+        filterable: PropTypes.bool,
 
         //specify false if you don't want column menus to be displayed
-        withColumnMenu   : React.PropTypes.bool,
-        cellEllipsis     : React.PropTypes.bool,
-        sortable         : React.PropTypes.bool,
-        loadMaskOverHeader : React.PropTypes.bool,
-        idProperty       : React.PropTypes.string.isRequired,
+        withColumnMenu   : PropTypes.bool,
+        cellEllipsis     : PropTypes.bool,
+        sortable         : PropTypes.bool,
+        loadMaskOverHeader : PropTypes.bool,
+        idProperty       : PropTypes.string.isRequired,
 
         //you can customize the column menu by specifying a factory
-        columnMenuFactory: React.PropTypes.func,
-        onDataSourceResponse: React.PropTypes.func,
-        onDataSourceSuccess: React.PropTypes.func,
-        onDataSourceError: React.PropTypes.func,
+        columnMenuFactory: PropTypes.func,
+        onDataSourceResponse: PropTypes.func,
+        onDataSourceSuccess: PropTypes.func,
+        onDataSourceError: PropTypes.func,
 
         /**
          * @cfg {Number/String} columnMinWidth=50
          */
-        columnMinWidth   : PropTypes.numeric,
-        scrollBy         : PropTypes.numeric,
-        rowHeight        : PropTypes.numeric,
-        sortInfo         : PropTypes.sortInfo,
-        columns          : PropTypes.column,
+        columnMinWidth   : RowPropTypes.numeric,
+        scrollBy         : RowPropTypes.numeric,
+        rowHeight        : RowPropTypes.numeric,
+        sortInfo         : RowPropTypes.sortInfo,
+        columns          : RowPropTypes.column,
 
         data: function(props, name){
             var value = props[name]

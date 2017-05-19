@@ -1,7 +1,8 @@
 'use strict';
 
-var React    = require('react')
-var assign   = require('object-assign')
+var React = require('react')
+var PropTypes = require('prop-types')
+var assign = require('object-assign')
 var Scroller = require('react-virtual-scroller')
 
 function emptyFn(){}
@@ -11,11 +12,11 @@ module.exports = React.createClass({
     displayName: 'ReactDataGrid.Wrapper',
 
     propTypes: {
-        scrollLeft   : React.PropTypes.number,
-        scrollTop    : React.PropTypes.number,
-        scrollbarSize: React.PropTypes.number,
-        rowHeight   : React.PropTypes.any,
-        renderCount : React.PropTypes.number
+        scrollLeft   : PropTypes.number,
+        scrollTop    : PropTypes.number,
+        scrollbarSize: PropTypes.number,
+        rowHeight   : PropTypes.any,
+        renderCount : PropTypes.number
     },
 
     getDefaultProps: function(){
