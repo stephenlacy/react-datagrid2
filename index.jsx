@@ -2,7 +2,6 @@
 
 require('./index.styl')
 
-//var Guid = require('node-uuid')
 var sorty = require('sorty')
 var React = require('react')
 var ReactDOM = require('react-dom')
@@ -26,7 +25,6 @@ var gen = (function(){
         for (var i = 0; i < len; i++){
             arr.push({
                 id       : i + 1,
-                // id: Guid.create(),
                 grade      : Math.round(Math.random() * 10),
                 email    : faker.internet.email(),
                 firstName: faker.name.firstName(),

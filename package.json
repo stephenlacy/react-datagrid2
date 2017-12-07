@@ -76,7 +76,6 @@
     "es6-promise": "^4.1.0",
     "has-touch": "^1.0.1",
     "hasown": "^1.0.1",
-    "node-uuid": "^1.4.8",
     "object-assign": "^4.1.1",
     "react-class": "^3.2.2",
     "react-dom-factories": "^1.0.2",

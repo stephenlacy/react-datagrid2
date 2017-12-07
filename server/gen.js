@@ -1,5 +1,4 @@
 var faker = require('faker')
-var Guid = require('node-uuid')
 
 module.exports = (function(){
 
@@ -18,7 +17,6 @@ module.exports = (function(){
         for (var i = 0; i < len; i++){
             arr.push({
                 id       : i + 1,
-                // id: Guid.create(),
                 grade      : Math.round(Math.random() * 10),
                 email    : faker.internet.email(),
                 firstName: faker.name.firstName(),
