@@ -2,12 +2,13 @@
 
 var React = require('react')
 var PropTypes = require('prop-types')
+var createClass = require('create-react-class')
 var assign = require('object-assign')
 var Scroller = require('react-virtual-scroller2')
 
 function emptyFn(){}
 
-module.exports = React.createClass({
+module.exports = createClass({
 
     displayName: 'ReactDataGrid.Wrapper',
 

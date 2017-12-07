@@ -1,6 +1,8 @@
 'use strict';
 
 var React  = require('react')
+var DOM = require('react-dom-factories')
+var createClass = require('create-react-class')
 var PropTypes = require('prop-types')
 var assign = require('object-assign')
 var normalize = require('react-style-normalizer')
@@ -20,7 +22,7 @@ function copyProps(target, source, list){
 
 }
 
-var Cell = React.createClass({
+var Cell = createClass({
 
     displayName: 'ReactDataGrid.Cell',
 
@@ -137,7 +139,7 @@ var Cell = React.createClass({
       }
 
       var content = renderCell ? renderCell(contentProps, text, props) :
-        React.DOM.div(contentProps, text)
+        DOM.div(contentProps, text)
 
         delete rest.data
 

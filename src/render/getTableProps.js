@@ -5,7 +5,6 @@ var renderMenu = require('./renderMenu')
 var renderRow  = require('./renderRow')
 var tableStyle  = require('./tableStyle')
 var slice  = require('./slice')
-var LoadMask = require('react-load-mask')
 
 function getData(props){
 

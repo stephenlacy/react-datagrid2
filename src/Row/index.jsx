@@ -4,13 +4,14 @@ var React = require('react')
 var PropTypes = require('prop-types')
 var Region = require('region')
 var assign = require('object-assign')
+var createClass = require('create-react-class')
 var normalize = require('react-style-normalizer')
 var Cell = require('../Cell')
 var CellFactory = React.createFactory(Cell)
-var ReactMenu = require('react-menus')
+var ReactMenu = require('react-menus2')
 var ReactMenuFactory = React.createFactory(ReactMenu)
 
-module.exports = React.createClass({
+module.exports = createClass({
 
   displayName: 'ReactDataGrid.Row',
 

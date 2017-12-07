@@ -1,10 +1,11 @@
 'use strict';
 
-import { findDOMNode } from 'react-dom';
+var { findDOMNode } = require('react-dom')
+var createClass     = require('create-react-class')
 var React     = require('react')
-var ReactDOM  = require('react-dom')
+var DOM       = require('react-dom-factories')
 var assign    = require('object-assign')
-var Toolbar   = require('react-simple-toolbar')
+var Toolbar   = require('./Toolbar')
 var Region    = Toolbar.Region
 var normalize = require('react-style-normalizer')
 
@@ -112,7 +113,7 @@ var defaultStyles = {
 	// gotoNext: { marginLeft: 10}
 }
 
-module.exports = React.createClass({
+module.exports = createClass({
 
 	displayName: 'PaginationToolbar',
 
@@ -294,7 +295,7 @@ module.exports = React.createClass({
 			onChange: this.handleInputChange
 		}, otherProps)
 
-		var defaultFactory = React.DOM.input
+		var defaultFactory = DOM.input
 		var factory = props.pageInputFactory || defaultFactory
 
 		var result = factory(inputProps)
@@ -319,7 +320,7 @@ module.exports = React.createClass({
 			children: options
 		}
 
-		var defaultFactory = React.DOM.select
+		var defaultFactory = DOM.select
 		var factory = props.pageSizeSelectFactory || defaultFactory
 
 		var result = factory(selectProps)

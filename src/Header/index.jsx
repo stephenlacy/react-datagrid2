@@ -3,7 +3,8 @@
 var React = require('react')
 var PropTypes = require('prop-types')
 var Region = require('region')
-var ReactMenu = React.createFactory(require('react-menus'))
+var ReactMenu = React.createFactory(require('react-menus2'))
+var createClass = require('create-react-class')
 var assign = require('object-assign')
 var clone = require('clone')
 var asArray = require('../utils/asArray')
@@ -55,7 +56,7 @@ function getDropState(){
     }
 }
 
-module.exports = React.createClass({
+module.exports = createClass({
 
     displayName: 'ReactDataGrid.Header',
 

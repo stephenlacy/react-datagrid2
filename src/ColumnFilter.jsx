@@ -1,8 +1,9 @@
 'use strict';
 
 var React = require('react')
+var DOM = require('react-dom-factories')
 var assign = require('object-assign');
-var ReactMenu = require('react-menus')
+var ReactMenu = require('react-menus2')
 var findDOMNode = require('react-dom').findDOMNode
 
 function stopPropagation(event){
@@ -19,7 +20,7 @@ module.exports = {
 
         var type = column.type || 'string'
 
-        return FILTER_FIELDS[type] || React.DOM.input
+        return FILTER_FIELDS[type] || DOM.input
     },
 
     getFilterField: function(props){
