@@ -79,7 +79,7 @@
     "object-assign": "^4.1.1",
     "react-class": "^3.2.2",
     "react-dom-factories": "^1.0.2",
-    "react-menus2": "stevelacy/react-menus2",
+    "react-menus2": "3.0.0",
     "react-simple-toolbar": "^1.0.5",
     "react-style-normalizer": "^1.2.8",
     "react-virtual-scroller2": "^2.3.1",
