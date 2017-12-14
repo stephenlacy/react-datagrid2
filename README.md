@@ -8,7 +8,7 @@ See demo at [stevelacy.github.io/react-datagrid2](http://stevelacy.github.io/rea
 <a href="http://stevelacy.github.io/react-datagrid2/#/examples/basic"><img src="./react-datagrid.png" height="400" width="739" /></a>
 
 
-## Supports both React 0.14 & 15
+## Supports React 15 and 16
 
 ## Install
 
