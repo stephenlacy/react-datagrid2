@@ -111,6 +111,10 @@ module.exports = createClass({
         onDataSourceSuccess: PropTypes.func,
         onDataSourceError: PropTypes.func,
 
+        // add elements to the start or end of the header
+        headerPrefix: PropTypes.func,
+        headerPostfix: PropTypes.func,
+
         /**
          * @cfg {Number/String} columnMinWidth=50
          */
@@ -377,8 +381,9 @@ module.exports = createClass({
             showMenu         : this.showMenu,
             filterMenuFactory : this.filterMenuFactory,
             menuColumn       : state.menuColumn,
-            columnMenuFactory: props.columnMenuFactory
-
+            columnMenuFactory: props.columnMenuFactory,
+            prefix: props.headerPrefix,
+            postfix: props.headerPostfix
         })
     },
 

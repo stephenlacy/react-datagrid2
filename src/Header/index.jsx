@@ -61,7 +61,10 @@ module.exports = createClass({
     displayName: 'ReactDataGrid.Header',
 
     propTypes: {
-        columns: PropTypes.array
+        columns: PropTypes.array,
+        // add elements to the start or end of the header
+        prefix: PropTypes.func,
+        postfix: PropTypes.func,
     },
 
     onDrop: function(event){
@@ -155,9 +158,11 @@ module.exports = createClass({
 
         return (
             <div style={style} className={props.className}>
+                {props.prefix && props.prefix()}
                 <div className='z-header' style={headerStyle}>
                     {cells}
                 </div>
+                {props.prefix && props.postfix()}
             </div>
         )
     },
