@@ -162,7 +162,7 @@ module.exports = createClass({
                 <div className='z-header' style={headerStyle}>
                     {cells}
                 </div>
-                {props.prefix && props.postfix()}
+                {props.postfix && props.postfix()}
             </div>
         )
     },
