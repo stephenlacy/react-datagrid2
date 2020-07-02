@@ -48,7 +48,7 @@ module.exports = createClass({
 
         var content = props.empty?
             <div className="z-empty-text" style={props.emptyTextStyle}>{props.emptyText}</div>:
-            <div {...props.tableProps} ref="table"/>
+            <div {...props.tableProps} ref={el => this.table = el}/>
 
 
         return <Scroller
